@@ -35,18 +35,18 @@ mvn test
 * Find and familiarize yourself with Server, Client and test source files.
 * Have default project up and running. Both defined 'helloRequest*' tests must succeed.
 * Add 'table' client request and implement server response which will return randomly chosen 'Value' from 'BasicWeightTable'.
-* Implement tests that would run multiple 'table' requests and check aggregated responses against the expected occurences defined in 'BasicWeightTable'. Hint: use '1m runs error margin' value to compare the results with 95% confidence. 
+* Implement tests that would run multiple 'table' requests and check aggregated responses against the expected occurences defined in 'BasicWeightTable'. Hint: use '100k runs error margin' value to compare the results with 99% confidence. 
 * Improve communication protocol to use either Json or XML. Update your tests accordingly.
 
 #### Desirable Tasks 
 
 * Add 'spin' request which will return a 3x3 matrix. Use 'Symbols' and 'Reels' tables. For every matrix draw one random position from each of the reels. 
 * For each result where middle row of your matrix satisfies one of the rules defined in 'WinRules' return the associated value.
-* Implement tests that would run multiple 'table' requests and check aggregated responses against the 'expected chance' defined in 'WinRules' table. Hint: use '1m runs error margin' value to compare the results with 95% confidence. 
+* Implement tests that would run multiple 'table' requests and check aggregated responses against the 'expected chance' defined in 'WinRules' table. Hint: use '100k runs error margin' value to compare the results with 99% confidence. 
 
 #### Optional Tasks 
 
-* Add 'Return To Player' value in percentage for both 'table' and 'spin'. Assuming each request cost '3.5'. We will not provide you with table to compare your results this time. Hint: To find the requested result compare total spent on initiating requests and total returned in responses. 
+* Add 'Return To Player' value in percentage for both 'table' and 'spin'. Assuming each request cost '3.5'. We will not provide you with table to compare your results this time. Hint: To find the requested result compare total spent on initiating requests and total returned in responses. You can use 1% margin error for RTP comparison. 
 * Can you change the server - client to work with WebSockets?
 
 ## Review Criteria 
