@@ -27,6 +27,20 @@ We will be looking for:
 * Exceptions and error handling. 
 * Cool, exciting solutions/ideas.
 
+## Submission 
+
+Replace the contents of this README.md with: 
+
+A covering note explaining the technology choices you have made. 
+
+Any instructions required to run your solution. 
+
+Email as an attachment or a link the git bundled repository showing your commit history with all your commits on the master branch: 
+
+```
+git bundle create <anything>.bundle --all --branches 
+```
+
 ### Setup and Details
  * Grab repository contents either via zip or git pull.
  * If working with compressed file, unpack file contents to folder of your choice.
@@ -65,16 +79,3 @@ mvn test
 * Add 'Return To Player' value in percentage for both 'table' and 'spin'. Assuming each request cost '3.5'. We will not provide you with table to compare your results this time. Hint: To find the requested result compare total spent on initiating requests and total returned in responses. You can use 1% margin error for RTP comparison. 
 * For extra fun, can you change the server - client to work with WebSockets?
 
-## Submission 
-
-Replace the contents of this README.md with: 
-
-A covering note explaining the technology choices you have made. 
-
-Any instructions required to run your solution. 
-
-Email as an attachment or a link the git bundled repository showing your commit history with all your commits on the master branch: 
-
-```
-git bundle create <anything>.bundle --all --branches 
-```
