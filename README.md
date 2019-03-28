@@ -59,7 +59,7 @@ java -jar Server\target\Server-1.0.1-jar-with-dependencies.jar
 mvn test
 ```
  * Watch the output for any test fail/ pass information.
- * All data tables can be found in 'profile.xlsx' file under titled tabs.
+ * All data tables can be found in 'profile.xlsx' file under titled tabs. You do not have to parse the xlsx.
 
 ### Required Tasks 
 
