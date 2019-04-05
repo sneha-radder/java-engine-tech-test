@@ -45,7 +45,7 @@ git bundle create <anything>.bundle --all --branches
 ### Setup and Details
  * Grab repository contents either via zip or git pull.
  * If working with compressed file, unpack file contents to folder of your choice.
- * In command line move to 'test' folder.
+ * In command line move to project's root folder.
  * To build all modules execute:
 ```
 mvn clean install -DskipTests
@@ -54,7 +54,7 @@ mvn clean install -DskipTests
 ```
 java -jar Server\target\Server-1.0.1-jar-with-dependencies.jar
 ```
- * To run tests, in another command line window, execute: 
+ * To run tests, in another command line window move to 'project root'/Client folder and execute: 
 ```
 mvn test
 ```
@@ -65,18 +65,18 @@ mvn test
 
 * Find and familiarize yourself with Server, Client and unit tests source files. Hint: The 'test' is structured as a simple client - server application. The server is responsible for performing logic and generating responses to client requests. The client sends requests and contains a test suite which is used to validate given behaviours.
 * Have default project up and running. Both defined 'helloRequest*' tests must succeed. Hint: That should be done without any changes to the code by following 'Setup and Details' steps.
-* Add a 'table' client request and implement server response which will return randomly chosen 'Value' from 'BasicWeightTable' based on the percentage 'Chance'. Hint: For this task ignore data in '99% confidence level' column.
-* Implement tests that would run multiple 'table' requests and check aggregated responses against the expected occurences defined in 'BasicWeightTable'. Hint: How many times do you think 'Value' 3 will be retuned from the server? You can use '100k runs error margin' value to compare the results with 99% confidence. 
+* Add a 'table' client request and implement server response which will return randomly chosen 'Value' from 'BasicWeightTable' based on the percentage 'Chance'. Hint: For this step ignore data in '99% confidence level' column.
+* Implement a test or tests which would run multiple 'table' requests and check aggregated responses against the expected occurences defined in 'BasicWeightTable'. Hint: How many times do you think 'Value' 3 will be retuned from the server? For this step you can use '100k runs error margin' value to compare the results with 99% confidence. 
 * Improve communication protocol to use either Json or XML. Update your tests accordingly.
 
 #### Desirable Tasks 
 
-* Add a 'spin' request which will return a 3x3 matrix. Use 'Symbols' and 'Reels' tables. For every matrix draw one random position from each of the reels to stop at. 
+* Add a 'spin' request which will return a 3x3 matrix of symbols. Use 'Symbols' and 'Reels' tables. For every reel, draw one random position and populate the whole matrix column with results starting at that drawn position.
 * For each result where middle row of your matrix satisfies one of the rules defined in 'WinRules' return the associated value.
-* Implement tests that would run multiple 'table' requests and check aggregated responses against the 'expected chance' defined in 'WinRules' table. Hint: use '100k runs error margin' value to compare the results with 99% confidence. 
+* Implement a test or tests which would run multiple 'table' requests and check aggregated responses against the 'expected chance' defined in 'WinRules' table. Hint: Again you can use '100k runs error margin' value to compare the results with 99% confidence. 
 
 #### Optional Tasks 
 
-* Add 'Return To Player' value in percentage for both 'table' and 'spin'. Assuming each request cost '3.5'. We will not provide you with table to compare your results this time. Hint: To find the requested result compare total spent on initiating requests and total returned in responses. You can use 1% margin error for RTP comparison. 
+* Add 'Return To Player' value in percentage for both 'table' and 'spin'. Assuming each request cost '3.5'. We will not provide you with table to compare your results this time. Hint: To find the requested result compare total cost spent on initiating requests and total value returned in responses. You can use 1% margin error for RTP comparison. 
 * For extra fun, can you change the server - client to work with WebSockets?
 
