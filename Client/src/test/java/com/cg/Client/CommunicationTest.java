@@ -18,4 +18,20 @@ public class CommunicationTest {
     }
 
     //add more tests here to validate your work
+    
+    @Test
+    public void testTableRequestInputs() throws Exception {
+        String res = Client.postRequest("BasicWeight");
+        Scanner keyboard = new Scanner(in);
+        out.println("Enter a number");
+        int input = keyboard.nextInt();
+
+        while (input != res) {
+        out.println("Wrong input, try again.");
+        input = keyboard.nextInt();
+    }
+
+    return input;
+    }
+
 }
