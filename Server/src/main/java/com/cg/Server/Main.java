@@ -14,6 +14,8 @@ public class Main {
                     case "Hello":
                         return hello();
                     //other scenarios could go here ;)
+                    case ""   ;
+                        return null;
                     default:
                         return "Error! No or invalid request name specified! (" + req.body() + ")";
                 }
