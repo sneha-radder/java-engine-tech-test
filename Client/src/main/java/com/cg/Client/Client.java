@@ -43,6 +43,42 @@ public class Client {
             if (row > 0) {
                 System.out.println("A value is insered in the row");
             }
+            String symbolsData = "INSERT INTO symbols (SymbolId, SymbolStar, SymbolPercentage, SymbolDollar) values (?, ?,?,?)";
+            PreparedStatement symbolStatement = conn.prepareStatement(symbolsData);
+            String inputString = "Spin";
+            if(inputString == "Spin"){
+            symbolStatement.setString(1, "*", "%","$");
+            symbolStatement.setString(2, "*", "%","$");
+            symbolStatement.setString(3, "*", "%","$");
+            int resultSymbol = symbolStatement.executeUpdate();
+                if(row==3){
+                    System.out.println("A Matrix is insered in the row");
+                }
+            }  
+            String reelSymbols = "INSERT INTO reels (ReelId, ReelSymbol) values (?, ?)";
+            PreparedStatement symbolStatement = conn.prepareStatement(reelSymbols);
+            reelSymbols.setString(1, "&");
+            reelSymbols.setString(2, "@");
+            int resultReel = symbolStatement.executeUpdate();
+            
+            prepareStatement statement = con.prepareStatement("SELECT * FROM reels WHERE ReelId=?");
+            statement.setInt(1, ReelId);
+            ResultSet rs = statement.executeQuery();
+            String ReelSymbol=null;
+            while(rs.next()){
+             this.ReelSymbol = rs.getInt(1);
+             ReelSymbol=this.ReelSymbol;   
+            }
+            
+            if(ReelSymbol !=null && ReelSymbol == "&"){
+                prepareStatement statement = con.prepareStatement("SELECT SymbolStar,SymbolPercentage FROM symbols WHERE SymbolId=?");
+                statement.setInt(1, SymbolId);
+                ResultSet rs = statement.executeQuery();
+                while(rs.next()){
+                this.SymbolStar = rs.getString(1);
+                this.SymbolPercentage=rs.SymbolPercentage(2);   
+                }
+            }
             conn.close();  
         }catch (SQLException ex) {
             ex.printStackTrace();
