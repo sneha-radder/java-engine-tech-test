@@ -19,8 +19,11 @@ public class CommunicationTest {
     
     @Test
     public void testTableAggregateResponses() throws Exception {
+        String url = "jdbc:mysql://localhost:3306/contactdb";
+        String user = "root";
+        String password = "secret";
         Connection conn = DriverManager.getConnection(url, user, password);
-        prepareStatement statement = con.prepareStatement("SELECT * FROM persons WHERE BasicWeight=?");
+        prepareStatement statement = conn.prepareStatement("SELECT * FROM persons WHERE BasicWeight=?");
         statement.setInt(1, BasicWeight);
         statement.setInt(1, PercentageChance);
         ResultSet rs = statement.executeQuery();
